@@ -9,6 +9,8 @@ public class Ville
 	private String nomPays;
 	private int nbreHabitants;
 	private char categorie;
+	public static int nbreInstances;
+	private static int nbreInstancesBis;
 	
 	//constructeur par défaut
 	public Ville()
@@ -18,6 +20,8 @@ public class Ville
 		nomPays = "Inconnu";
 		nbreHabitants = 0;
 		this.setCategorie();
+		nbreInstances++;
+		nbreInstancesBis++;
 	}
 	
 	//constructeur avec paramètres
@@ -29,6 +33,8 @@ public class Ville
 		nomPays = pPays;
 		nbreHabitants = pNbre;
 		this.setCategorie();
+		nbreInstances++;
+		nbreInstancesBis++;
 	}
 	
 	//***********ACCESSEURS*********
@@ -52,6 +58,14 @@ public class Ville
 	{
 		return categorie;
 	}
+	//retourne le nombre d'instances (private donc il faut un getter)
+	public static int getNombreInstancesBis()
+	{
+		return nbreInstancesBis;
+	}
+	
+	
+	
 	//*********MUTATEURS**********
 	
 	//définit le nom de la ville
@@ -71,7 +85,8 @@ public class Ville
 		this.setCategorie();
 	}
 	//définit la catégorie de la ville ==> utilisation de "set"
-	private void setCategorie(){
+	private void setCategorie()
+	{
 		int bornesSuperieures[]= {0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000};
 		char categories[]= {'?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 		int i=0;
@@ -80,14 +95,15 @@ public class Ville
 		this.categorie = categories[i];
 	}
 	//retourne la description de la ville
-	public String decrisToi(){
+	public String decrisToi()
+	{
 		return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "
 	+this.nbreHabitants+ "habitant(s) => elle est donc de catégorie : "+this.categorie;
 	}
 	
 	//retourne une chaine de carqctere selon le résultat de la comparaison
-	public String comparer(Ville v1){
-		String str = new String();
+	public String comparer(Ville v1)
+	{		String str = new String();
 		
 		if(v1.getNbreHabitants()>this.nbreHabitants)
 			str = v1.getNom()+" est une ville plus peuplée que "+this.nomVille;
@@ -97,7 +113,10 @@ public class Ville
 		return str;
 	}
 	
+	
 	}
+	
+	
 	
 
 
