@@ -12,15 +12,13 @@ public class Sdz1
 
 	//initialisation des Villes
 		Ville v = new Ville();
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.nbreInstances);
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.getNombreInstancesBis());
-		Ville v1 = new Ville("Marseille", 123456789, "France");
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.nbreInstances);
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.getNombreInstancesBis());
-		Ville v2 = new Ville("Rio", 321654, "Brésil");
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.nbreInstances);
-		System.out.println("le nombre d'instances de la classe Ville est : "+Ville.getNombreInstancesBis());
 		
+		Ville v1 = new Ville("Marseille", 123456789, "France");
+		
+		Ville v2 = new Ville("Rio", 321654, "Brésil");
+	
+		Capitale cap = new Capitale("Paris", 654987, "France", "la tour eiffel");
+		System.out.println("\n"+cap.decrisToi());
 		
 		System.out.println("\n\n" +v1.decrisToi());
 		System.out.println(v.decrisToi());
@@ -39,9 +37,7 @@ public class Sdz1
 		v1 = v2;
 		v2 = temp;
 		// impression des nouvelles données
-		System.out.println("v1 = "+v1.getNom()+" ville de "+v1.getNbreHabitants()+" habitants se situant en "+v1.getNomPays());
-		System.out.println("v2 ="+v2.getNom()+" ville de "+v2.getNbreHabitants()+ " habitants se situant en " +v2.getNomPays());
-		System.out.println("\n");
+	
 	
 		
 		// changement de nom en se servant des mutateurs
@@ -49,8 +45,7 @@ public class Sdz1
 		v1.setNom("hongKong");
 	v2.setNom("Djibouti");
 	//impression des changements après utilisation des setters
-	System.out.println("v1 = "+v1.getNom()+" ville de "+v1.getNbreHabitants()+" habitants se situant en "+v1.getNomPays());
-	System.out.println("v2 ="+v2.getNom()+" ville de "+v2.getNbreHabitants()+ " habitants se situant en " +v2.getNomPays());
-	System.out.println("\n");
+
 	}
+
 }

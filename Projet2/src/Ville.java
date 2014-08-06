@@ -5,10 +5,10 @@ public class Ville
 {
 	
 //stocke le nom de la ville, du pays puis du nbre d'hab
-	private String nomVille;
-	private String nomPays;
-	private int nbreHabitants;
-	private char categorie;
+	protected String nomVille;
+	protected String nomPays;
+	protected int nbreHabitants;
+	protected char categorie;
 	public static int nbreInstances;
 	private static int nbreInstancesBis;
 	
