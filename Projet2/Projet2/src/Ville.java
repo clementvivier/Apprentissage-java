@@ -1,13 +1,16 @@
 
 
-public class Ville {
-	
+public class Ville 
+
+{
 	
 //stocke le nom de la ville, du pays puis du nbre d'hab
-	private String nomVille;
-	private String nomPays;
-	private int nbreHabitants;
-	private char categorie;
+	protected String nomVille;
+	protected String nomPays;
+	protected int nbreHabitants;
+	protected char categorie;
+	public static int nbreInstances;
+	private static int nbreInstancesBis;
 	
 	//constructeur par défaut
 	public Ville()
@@ -17,10 +20,12 @@ public class Ville {
 		nomPays = "Inconnu";
 		nbreHabitants = 0;
 		this.setCategorie();
+		nbreInstances++;
+		nbreInstancesBis++;
 	}
 	
 	//constructeur avec paramètres
-	//paramètre commence par "p"
+	//paramètre commence par "p" ici on retrouve l'ordre utilisé dans le main : nom, chiffre, pays
 	public Ville(String pNom, int pNbre, String pPays)
 	{
 		System.out.println("Création d'une ville avec des paramètres !");
@@ -28,6 +33,8 @@ public class Ville {
 		nomPays = pPays;
 		nbreHabitants = pNbre;
 		this.setCategorie();
+		nbreInstances++;
+		nbreInstancesBis++;
 	}
 	
 	//***********ACCESSEURS*********
@@ -46,11 +53,17 @@ public class Ville {
 	{
 		return nbreHabitants;
 	}
-	
+	//création de l'accès à la catégorie (fonction du nombre d'habitants)
 	public char getCategorie()
 	{
 		return categorie;
 	}
+	//retourne le nombre d'instances (private donc il faut un getter)
+	public static int getNombreInstancesBis()
+	{
+		return nbreInstancesBis;
+	}
+		
 	//*********MUTATEURS**********
 	
 	//définit le nom de la ville
@@ -69,8 +82,9 @@ public class Ville {
 		nbreHabitants = pNbre;
 		this.setCategorie();
 	}
-	//définit la catégorie de la ville
-	private void setCategorie(){
+	//définit la catégorie de la ville ==> utilisation de "set"
+	private void setCategorie()
+	{
 		int bornesSuperieures[]= {0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000};
 		char categories[]= {'?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 		int i=0;
@@ -79,14 +93,15 @@ public class Ville {
 		this.categorie = categories[i];
 	}
 	//retourne la description de la ville
-	public String decrisToi(){
+	public String decrisToi()
+	{
 		return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "
 	+this.nbreHabitants+ "habitant(s) => elle est donc de catégorie : "+this.categorie;
 	}
 	
 	//retourne une chaine de carqctere selon le résultat de la comparaison
-	public String comparer(Ville v1){
-		String str = new String();
+	public String comparer(Ville v1)
+	{		String str = new String();
 		
 		if(v1.getNbreHabitants()>this.nbreHabitants)
 			str = v1.getNom()+" est une ville plus peuplée que "+this.nomVille;
@@ -96,7 +111,11 @@ public class Ville {
 		return str;
 	}
 	
-	}
+	
+}
+
+	
+	
 	
 
 
