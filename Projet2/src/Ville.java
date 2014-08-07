@@ -63,9 +63,7 @@ public class Ville
 	{
 		return nbreInstancesBis;
 	}
-	
-	
-	
+		
 	//*********MUTATEURS**********
 	
 	//définit le nom de la ville
@@ -114,7 +112,8 @@ public class Ville
 	}
 	
 	
-	}
+}
+
 	
 	
 	

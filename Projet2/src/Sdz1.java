@@ -47,5 +47,6 @@ public class Sdz1
 	//impression des changements après utilisation des setters
 
 	}
+	
+	}
 
-}
