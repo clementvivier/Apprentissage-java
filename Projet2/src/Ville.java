@@ -98,7 +98,53 @@ public class Ville
 		return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "
 	+this.nbreHabitants+ "habitant(s) => elle est donc de catégorie : "+this.categorie;
 	}
+	// retourne la définition de la ville test avec "toString(), copie de décrisToi()
+	public String toString()
+	{	return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "
+			+this.nbreHabitants+" habitants ==> elle est donc de catégorie : "+this.categorie;
+	}
 	
+	//test via eclipse de génération de hashcode(pour catégoriser un objet)
+	//exactement comme dans le livre p111)
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + categorie;
+		result = prime * result + nbreHabitants;
+		result = prime * result + ((nomPays == null) ? 0 : nomPays.hashCode());
+		result = prime * result
+				+ ((nomVille == null) ? 0 : nomVille.hashCode());
+		return result;
+	}
+// test via Eclipse de la génération d'un comparateur d'objet (vérifie si les objets sont égaux)
+	//exactement comme dans le livre p112
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ville other = (Ville) obj;
+		if (categorie != other.categorie)
+			return false;
+		if (nbreHabitants != other.nbreHabitants)
+			return false;
+		if (nomPays == null) {
+			if (other.nomPays != null)
+				return false;
+		} else if (!nomPays.equals(other.nomPays))
+			return false;
+		if (nomVille == null) {
+			if (other.nomVille != null)
+				return false;
+		} else if (!nomVille.equals(other.nomVille))
+			return false;
+		return true;
+	}
+
 	//retourne une chaine de carqctere selon le résultat de la comparaison
 	public String comparer(Ville v1)
 	{		String str = new String();

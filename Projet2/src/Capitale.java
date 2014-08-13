@@ -26,6 +26,12 @@ public class Capitale extends Ville {
 	
 	return str;
 	}
+	//return String retourne la description de la capitale
+	public String toString()
+	{	String str = super.toString()+ "\n \t ==>"+ this.monument+" en est un monument";
+	
+	return str;
+	}
 	
 	//retourne le nom du monument
 	public String getMonument()

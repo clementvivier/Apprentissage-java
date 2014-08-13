@@ -17,6 +17,7 @@ public class Villetableau {
 			
 			String [] tab = {"Marseille", "Lille", "Caen", "Lyon", "Paris", "Nantes"};
 			int [] tab5 = {123456, 78456, 654987, 75832165, 1594, 213};
+			String [] tMonu = {"","","","hotel-dieu","tour eiffel", "immaculée conception"};
 			
 			//les 3 premieres villes sont des villes, les 3 suivantes des capitales
 			for(int i = 0; i<6 ; i++)
@@ -25,13 +26,13 @@ public class Villetableau {
 					tableau[i] = V;
 			}
 			else 
-			{	Capitale C = new Capitale(tab[i], tab5[i], "France", "la Tour Eiffel");
+			{	Capitale C = new Capitale(tab[i], tab5[i], "France", tMonu[i]);
 					tableau[i] = C;
 			}
 			}
 			//description du tableau
-			for(Ville v : tableau)
-			{	System.out.println(v.decrisToi()+"\n");
+			for(Object v : tableau)
+			{	System.out.println(((Ville)v).decrisToi()+"\n");
 			
 			}
 	}
