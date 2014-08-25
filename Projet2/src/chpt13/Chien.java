@@ -1,7 +1,7 @@
 package chpt13;
 
 public class Chien extends Canin implements Rintintin {
-
+// permet ici d'utiliser l'interface Rintintin quand on fait appel à la classe Chien
 	public Chien ()
 	{}
 	
@@ -13,6 +13,8 @@ public class Chien extends Canin implements Rintintin {
 	void crier()
 	{	System.out.println("J'aboie sans raison");
 }
+	//comme l'interface Rintintin est implémentée par la classe Chien, on peut définir les méthodes
+	// de l'interface dans la classe d'implémentation, la classe Chien.
 	public void faireCalin()
 	{	System.out.println("Je te fais un GROS CALIN");
 	
