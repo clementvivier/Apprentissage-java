@@ -1,6 +1,6 @@
 package test_design_pattern;
 
-public abstract class Personnage 
+public abstract class Personnage implements Soin, EspritCombatif, Deplacement
 {
 	protected String armes = "", chaussure = "", sacDesoin = "";
 	
