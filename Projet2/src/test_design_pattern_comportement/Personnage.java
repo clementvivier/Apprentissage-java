@@ -40,6 +40,19 @@ public abstract class Personnage
 		soin.soigne();
 	}
 	
+	
+	/*
+	 
+	 
+	 Les trois bugs ici sont de meme nature. Tu fais appel dans dans les interfaces
+	 EspritCombatif, Soin et Deplacement a des fonctions qui n'y sont pas definies.
+	 
+	 
+	 */
+	
+
+	
+	
 	//redéfinit le comportement au combat
 	public void setEspritCombatif(EspritCombatif espritCombatif)
 	{	this.espritCombatif = espritCombatif;
