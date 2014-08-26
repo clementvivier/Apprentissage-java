@@ -6,18 +6,18 @@ public class Main {
 		// TODO Auto-generated method stub
 			
 			
-Personnage [] tPers = {new Guerrier(), new Medecin(), new Civil(), new Chirurgien(), new Sniper()};
-String [] tArmes = {"pistolet", "pistolet", "couteau", "fusil à pompe","couteau"};
+Personnage [] tPers = {new Guerrier(), new Chirurgien(), new Civil(), new Sniper(), new Medecin()};
+String [] tArmes = {"fusil de sniper","grand sac","couteau","fusil à pompe","Grand sac"};
 
 
 for (int i = 0; i < tPers.length; i++)
 		{		System.out.println("\nInstance de "+tPers[i].getClass().getName());
 	System.out.println("------------------------------");
+	
+	
+	tPers[i].setArmes(tArmes[i]);tPers[i].soigner();tPers[i].combattre();
 	tPers[i].combattre();
-	tPers[i].setArmes(tArmes[i]);
-	//tPers[i].combattre();
 	tPers[i].seDeplacer();
-	tPers[i].soigner();
 }
 	
 		}

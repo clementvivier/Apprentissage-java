@@ -1,5 +1,5 @@
 package test_design_pattern_comportement;
-
+import test_design_pattern_comportement.*;
 
 public class Guerrier extends Personnage {
 

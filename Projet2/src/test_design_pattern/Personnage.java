@@ -1,6 +1,6 @@
 package test_design_pattern;
 
-public abstract class Personnage implements Soin, EspritCombatif, Deplacement
+public abstract class Personnage 
 {
 	protected String armes = "", chaussure = "", sacDesoin = "";
 	
@@ -11,6 +11,7 @@ public abstract class Personnage implements Soin, EspritCombatif, Deplacement
 	public void combattre()
 	{		System.out.println("Je ne combats PAS");
 	}
+	
 	public void soigner()
 	{		System.out.println("Je ne soigne PAS");
 	}

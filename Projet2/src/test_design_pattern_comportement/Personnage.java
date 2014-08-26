@@ -1,4 +1,6 @@
 package test_design_pattern_comportement;
+import test_design_pattern_comportement.*;
+
 
 
 public abstract class Personnage 
@@ -32,26 +34,13 @@ public abstract class Personnage
 	//méthode de combat du personnage
 	public void combattre()
 	{ 
-		espritCombatif.combattre();
+		espritCombatif.combat();
 		}
 	//méthode de soin
 	public void soigner()
 	{
 		soin.soigne();
 	}
-	
-	
-	/*
-	 
-	 
-	 Les trois bugs ici sont de meme nature. Tu fais appel dans dans les interfaces
-	 EspritCombatif, Soin et Deplacement a des fonctions qui n'y sont pas definies.
-	 
-	 
-	 */
-	
-
-	
 	
 	//redéfinit le comportement au combat
 	public void setEspritCombatif(EspritCombatif espritCombatif)
